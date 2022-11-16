@@ -37,7 +37,7 @@ test:
     - pytest --cov pytest_describe
 
 about:
-  home: https://github.com/ropez/pytest-describe
+  home: https://github.com/pytest-dev/pytest-describe
   license: MIT
   license_family: MIT
   license_file: LICENSE
@@ -45,6 +45,8 @@ about:
   description: |
     pytest-describe is a plugin for pytest that allows tests to be written in arbitrary
     nested describe-blocks, similar to RSpec (Ruby) and Jasmine (JavaScript).
+  dev_url: https://github.com/pytest-dev/pytest-describe
+  doc_url: https://github.com/pytest-dev/pytest-describe/blob/main/README.rst
 
 extra:
   recipe-maintainers:
