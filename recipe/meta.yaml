@@ -33,7 +33,7 @@ test:
   imports:
     - pytest_describe
   commands:
-    - python -m pip check
+    - pip check
     - pytest --cov pytest_describe
 
 about:
