@@ -1,5 +1,5 @@
 {% set name = "pytest-describe" %}
-{% set version = "2.0.1" %}
+{% set version = "2.2.0" %}
 
 package:
   name: {{ name }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e5cbaa31169f0060348ad5ca0191027e5f1f41f3f27fdeef208365e09c55eb9a
+  sha256: 39bb05eb90f2497d9ca342ef9a0b7fa5bada7e58505aec33f66d661d631955b7
 
 build:
-  skip: True  # [py<36]
+  skip: True  # [py<37]
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
@@ -22,7 +22,7 @@ requirements:
     - wheel
   run:
     - python
-    - pytest >=4.0.0
+    - pytest >=4.6,<9
 
 test:
   requires:
@@ -46,7 +46,7 @@ about:
     pytest-describe is a plugin for pytest that allows tests to be written in arbitrary
     nested describe-blocks, similar to RSpec (Ruby) and Jasmine (JavaScript).
   dev_url: https://github.com/pytest-dev/pytest-describe
-  doc_url: https://github.com/pytest-dev/pytest-describe/blob/main/README.rst
+  doc_url: https://github.com/pytest-dev/pytest-describe/blob/main/README.md
 
 extra:
   recipe-maintainers:
