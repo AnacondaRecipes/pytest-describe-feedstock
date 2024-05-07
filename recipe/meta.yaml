@@ -46,7 +46,7 @@ about:
     pytest-describe is a plugin for pytest that allows tests to be written in arbitrary
     nested describe-blocks, similar to RSpec (Ruby) and Jasmine (JavaScript).
   dev_url: https://github.com/pytest-dev/pytest-describe
-  doc_url: https://github.com/pytest-dev/pytest-describe/blob/main/README.rst
+  doc_url: https://github.com/pytest-dev/pytest-describe/blob/main/README.md
 
 extra:
   recipe-maintainers:
