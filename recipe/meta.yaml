@@ -1,16 +1,16 @@
 {% set name = "pytest-describe" %}
-{% set version = "2.2.0" %}
+{% set version = "2.2.1" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 39bb05eb90f2497d9ca342ef9a0b7fa5bada7e58505aec33f66d661d631955b7
+  url: https://pypi.org/packages/source/p/pytest-describe/pytest_describe-2.2.1.tar.gz
+  sha256: eb59307333508d700082a4a8aadba0f874f02c73602f7113071b0b41bfe183b7
 
 build:
-  skip: True  # [py<37]
+  skip: true  # [py<37]
   number: 0
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
