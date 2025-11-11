@@ -1,16 +1,16 @@
 {% set name = "pytest-describe" %}
-{% set version = "2.2.0" %}
+{% set version = "3.0.0" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 39bb05eb90f2497d9ca342ef9a0b7fa5bada7e58505aec33f66d661d631955b7
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name|replace("-", "_") }}-{{ version }}.tar.gz
+  sha256: 50e0b7f404decaeb1b5d7bca13cbe369208d1eeffafc2802663777b195f074ff
 
 build:
-  skip: True  # [py<37]
+  skip: true  # [py<39]
   number: 0
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
@@ -20,9 +20,10 @@ requirements:
     - pip
     - setuptools
     - wheel
+    - uv-build >=0.9.4,<0.10.0
   run:
     - python
-    - pytest >=4.6,<9
+    - pytest >=6,<9
 
 test:
   requires:
@@ -34,7 +35,7 @@ test:
     - pytest_describe
   commands:
     - pip check
-    - pytest --cov pytest_describe
+    - pytest -ra -v --tb=short --cov pytest_describe
 
 about:
   home: https://github.com/pytest-dev/pytest-describe
