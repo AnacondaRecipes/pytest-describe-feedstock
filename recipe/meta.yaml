@@ -21,7 +21,6 @@ requirements:
     - setuptools
     - wheel
     - uv-build >=0.9.4,<0.10.0
-    - uv_build >=0.9.4,<0.10.0
   run:
     - python
     - pytest >=7,<10
